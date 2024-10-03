@@ -1,4 +1,4 @@
-LESS_THAN_ONE_THOUSAND = 999
+LESS_THAN_ONE_THOUSAND = 1000
 
 """
 The constant maximum allowable before stopping the value generator
@@ -15,7 +15,7 @@ def value_generator() -> int:
         int: The value entered by the user.
     """
     final_sum = 0
-    while final_sum <= LESS_THAN_ONE_THOUSAND:
+    while final_sum < LESS_THAN_ONE_THOUSAND:
         final_sum += (value := int(input("Enter your number: ")))
         yield value
 
@@ -27,6 +27,17 @@ def calculate_the_sum() -> int:
     Returns:
         int: The total sum of the values entered by the user until the sum
              exceeds LESS_THAN_ONE_THOUSAND.
+
+    Alternative Solution:
+        def calculate_the_sum():
+            is_sum_more_one_thousand = False
+            final_sum = 0
+            while not is_sum_more_one_thousand:
+                final_sum+= user_input()
+                if is_sum_more_than_thousand(final_sum):
+                    is_sum_more_one_thousand = True
+            print(f"Final sum: {final_sum}")
+
     """
     return sum([val for val in value_generator()])
 
