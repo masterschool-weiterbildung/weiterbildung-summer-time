@@ -4,6 +4,7 @@ LESS_THAN_ONE_THOUSAND = 999
 The constant maximum allowable before stopping the value generator
 """
 
+
 def value_generator() -> int:
     """
     Generator function that continually prompts the user for input values,
@@ -37,5 +38,7 @@ def main() -> None:
     """
     print(f"Final sum: {calculate_the_sum()}")
 
+
 if __name__ == "__main__":
+
     main()
